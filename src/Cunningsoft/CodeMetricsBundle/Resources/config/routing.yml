@@ -1,0 +1,3 @@
+code_metrics_annotation:
+    resource: "@CodeMetricsBundle/Controller"
+    type: annotation

@@ -1,0 +1,8 @@
+services:
+    code_metrics_pdepend_parser:
+        class: Cunningsoft\CodeMetricsBundle\Services\PdependParser
+        arguments: [%kernel.cache_dir%]
+
+    code_metrics_phpmd_parser:
+        class: Cunningsoft\CodeMetricsBundle\Services\PhpMdParser
+        arguments: [%kernel.cache_dir%]

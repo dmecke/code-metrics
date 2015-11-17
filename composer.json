@@ -1,0 +1,13 @@
+{
+    "name": "dmecke/code-metrics",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daniel Mecke",
+            "email": "daniel.mecke@cunningsoft.de"
+        }
+    ],
+    "require": {
+        "symfony/symfony": "~2.7"
+    }
+}

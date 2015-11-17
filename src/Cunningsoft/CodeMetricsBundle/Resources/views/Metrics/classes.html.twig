@@ -1,0 +1,70 @@
+{% extends 'CodeMetricsBundle::layout.html.twig' %}
+
+{% block body %}
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>name</th>
+            <th>ca</th>
+            <th>cbo</th>
+            <th>ce</th>
+            <th>cis</th>
+            <th>cloc</th>
+            <th>cr</th>
+            <th>csz</th>
+            <th>dit</th>
+            <th>eloc</th>
+            <th>impl</th>
+            <th>lloc</th>
+            <th>loc</th>
+            <th>ncloc</th>
+            <th>noam</th>
+            <th>nocc</th>
+            <th>nom</th>
+            <th>noom</th>
+            <th>npm</th>
+            <th>rcr</th>
+            <th>vars</th>
+            <th>varsi</th>
+            <th>varsnp</th>
+            <th>wmc</th>
+            <th>wmci</th>
+            <th>wmcnp</th>
+        </tr>
+    </thead>
+    <tbody>
+{% for class in classes %}
+        <tr>
+            <td><div class="score score_{{ class.score|lower }}">{{ class.score }}</div></td>
+            <td><a href="{{ path('code_metrics_class', { 'id': class.id } ) }}">{{ class.qualifiedName }}</a></td>
+            <td>{{ class.ca }}</td>
+            <td>{{ class.cbo }}</td>
+            <td>{{ class.ce }}</td>
+            <td>{{ class.cis }}</td>
+            <td>{{ class.cloc }}</td>
+            <td>{{ class.cr }}</td>
+            <td>{{ class.csz }}</td>
+            <td>{{ class.dit }}</td>
+            <td>{{ class.eloc }}</td>
+            <td>{{ class.impl }}</td>
+            <td>{{ class.lloc }}</td>
+            <td>{{ class.loc }}</td>
+            <td>{{ class.ncloc }}</td>
+            <td>{{ class.noam }}</td>
+            <td>{{ class.nocc }}</td>
+            <td>{{ class.nom }}</td>
+            <td>{{ class.noom }}</td>
+            <td>{{ class.npm }}</td>
+            <td>{{ class.rcr }}</td>
+            <td>{{ class.vars }}</td>
+            <td>{{ class.varsi }}</td>
+            <td>{{ class.varsnp }}</td>
+            <td>{{ class.wmc }}</td>
+            <td>{{ class.wmci }}</td>
+            <td>{{ class.wmcnp }}</td>
+        </tr>
+{% endfor %}
+    </tbody>
+</table>
+{% endblock %}

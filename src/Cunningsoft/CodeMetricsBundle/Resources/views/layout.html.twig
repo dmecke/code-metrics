@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Code Metrics</title>
+        <style>
+.score {
+    padding: 4px 8px;
+    font-weight: bold;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.score_a {
+    background-color: green;
+    color: #ffffff;
+}
+.score_b {
+    background-color: greenyellow;
+    color: #333333;
+}
+.score_c {
+    background-color: khaki;
+    color: #333333;
+}
+.score_d {
+    background-color: darkgoldenrod;
+    color: #ffffff;
+}
+.score_e {
+    background-color: orangered;
+    color: #ffffff;
+}
+.score_f {
+    background-color: darkred;
+    color: #ffffff;
+}
+.problem {
+    color: orangered;
+    font-weight: bold;
+}
+        </style>
+    </head>
+    <body>
+    <ul>
+        <li><a href="{{ path('code_metrics_classes') }}">classes</a></li>
+        <li><a href="{{ path('code_metrics_methods') }}">methods</a></li>
+        <li><a href="{{ path('code_metrics_violations') }}">violations</a></li>
+    </ul>
+    {% block body %}{% endblock %}
+    </body>
+</html>

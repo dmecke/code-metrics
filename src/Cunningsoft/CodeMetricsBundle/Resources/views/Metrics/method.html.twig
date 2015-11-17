@@ -1,0 +1,33 @@
+{% extends 'CodeMetricsBundle::layout.html.twig' %}
+
+{% block body %}
+<h2><a href="{{ path('code_metrics_class', { 'id': method.class.id } ) }}">{{ method.class.qualifiedName }}</a>::{{ method.name }}</h2>
+
+<table>
+    <thead>
+    <tr>
+        <th></th>
+        <th>name</th>
+        <th>ccn</th>
+        <th>eloc</th>
+        <th>npath</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><div class="score score_{{ method.score|lower }}">{{ method.score }}</div></td>
+            <td>{{ method.name }}</td>
+            <td>{{ method.ccn }}</td>
+            <td>{{ method.eloc }}</td>
+            <td>{{ method.npath }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<ul>
+    {% for violation in method.violations %}
+        <li>{{ violation.description }} ({{ violation.lines }})</li>
+    {% endfor %}
+</ul>
+<pre style="padding-left: 20px; background-color: #eee; border: 1px solid #ccc">{{ method.source }}</pre>
+{% endblock %}

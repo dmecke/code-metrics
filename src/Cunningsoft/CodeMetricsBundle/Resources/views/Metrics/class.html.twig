@@ -1,0 +1,14 @@
+{% extends 'CodeMetricsBundle::layout.html.twig' %}
+
+{% block body %}
+<h2>{{ class.qualifiedName }}</h2>
+
+{% include 'CodeMetricsBundle::methods_table.html.twig' with { 'methods': class.methods } %}
+
+<ul>
+{% for violation in class.violations %}
+    <li>{{ violation.description }} ({{ violation.lines }})</li>
+{% endfor %}
+</ul>
+<pre style="padding-left: 20px; background-color: #eee; border: 1px solid #ccc">{{ class.source }}</pre>
+{% endblock %}

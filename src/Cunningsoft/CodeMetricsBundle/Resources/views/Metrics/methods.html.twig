@@ -1,0 +1,5 @@
+{% extends 'CodeMetricsBundle::layout.html.twig' %}
+
+{% block body %}
+{% include 'CodeMetricsBundle::methods_table.html.twig' with { 'methods': methods } %}
+{% endblock %}

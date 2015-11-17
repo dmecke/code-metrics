@@ -1,0 +1,22 @@
+{% extends 'CodeMetricsBundle::layout.html.twig' %}
+
+{% block body %}
+    <table>
+        <thead>
+        <tr>
+            <th>class</th>
+            {#<th>method</th>#}
+            <th>violation</th>
+        </tr>
+        </thead>
+        <tbody>
+{% for violation in violations %}
+            <tr>
+                <td>{% if violation.hasClass %}<a href="{{ path('code_metrics_class', { 'id': violation.class.id } ) }}">{{ violation.class.qualifiedName }}</a>{% endif %}</td>
+                <td>{% if violation.hasMethod %}<a href="{{ path('code_metrics_method', { 'id': violation.method.id } ) }}">{{ violation.method.qualifiedName }}</a>{% endif %}</td>
+                <td>{{ violation.description }}</td>
+            </tr>
+{% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

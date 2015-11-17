@@ -1,0 +1,22 @@
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>name</th>
+            <th>ccn</th>
+            <th>eloc</th>
+            <th>npath</th>
+        </tr>
+    </thead>
+    <tbody>
+{% for method in methods %}
+        <tr>
+            <td><div class="score score_{{ method.score|lower }}">{{ method.score }}</div></td>
+            <td><a href="{{ path('code_metrics_method', { 'id': method.id } ) }}">{{ method.qualifiedName }}</a></td>
+            <td>{{ method.ccn }}</td>
+            <td>{{ method.eloc }}</td>
+            <td>{{ method.npath }}</td>
+        </tr>
+{% endfor %}
+    </tbody>
+</table>
